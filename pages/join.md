@@ -11,4 +11,4 @@ title: 加入我们
 
 <img src="./武大天协.png" alt="武大天协" id="center_img" />
 
-会员
+加入会员

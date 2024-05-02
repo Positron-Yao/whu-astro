@@ -5,6 +5,4 @@ title: 加入我们
 
 # 加入我们!
 
-<div style="text-align:center">
-    <img src="./武大天协.png" width=50% />
-</div>
+<img src="./武大天协.png" width=50% style="margin:auto"/>

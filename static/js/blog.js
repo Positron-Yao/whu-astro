@@ -207,13 +207,10 @@ blog.initClickEffect = function (textArr) {
   }
 
   blog.addEvent(window, 'click', function (ev) {
-    let target = ev.target
-    while (target !== document.documentElement) {
-      if (target.tagName.toLocaleLowerCase() == 'a') return
-      if (blog.hasClass(target, 'footer-btn')) return
-      target = target.parentNode
+    var tagName = ev.target.tagName.toLocaleLowerCase()
+    if (tagName == 'a') {
+      return
     }
-
     var text = textArr[parseInt(Math.random() * textArr.length)]
     var dom = createDOM(text)
 
@@ -259,8 +256,8 @@ blog.addLoadEvent(function () {
 
 // 回到顶部
 blog.addLoadEvent(function () {
-  var el = document.querySelector('.footer-btn.to-top')
-  if (!el) return
+  var toTopDOM = document.getElementById('to-top')
+
   function getScrollTop() {
     if (document.documentElement && document.documentElement.scrollTop) {
       return document.documentElement.scrollTop
@@ -270,14 +267,14 @@ blog.addLoadEvent(function () {
   }
   function ckeckToShow() {
     if (getScrollTop() > 200) {
-      blog.addClass(el, 'show')
+      blog.addClass(toTopDOM, 'show')
     } else {
-      blog.removeClass(el, 'show')
+      blog.removeClass(toTopDOM, 'show')
     }
   }
   blog.addEvent(window, 'scroll', ckeckToShow)
   blog.addEvent(
-    el,
+    toTopDOM,
     'click',
     function (event) {
       window.scrollTo(0, 0)
@@ -413,61 +410,9 @@ blog.addLoadEvent(function () {
 
 // 切换夜间模式
 blog.addLoadEvent(function () {
-  const $el = document.querySelector('.footer-btn.theme-toggler')
-  const $icon = $el.querySelector('.svg-icon')
-
-  blog.removeClass($el, 'hide')
-  if (blog.darkMode) {
-    blog.removeClass($icon, 'icon-theme-light')
-    blog.addClass($icon, 'icon-theme-dark')
-  }
-
-  function initDarkMode(flag) {
-    blog.removeClass($icon, 'icon-theme-light')
-    blog.removeClass($icon, 'icon-theme-dark')
-    if (flag === 'true') blog.addClass($icon, 'icon-theme-dark')
-    else blog.addClass($icon, 'icon-theme-light')
-
-    document.documentElement.setAttribute('transition', '')
-    setTimeout(function () {
-      document.documentElement.removeAttribute('transition')
-    }, 600)
-
-    blog.initDarkMode(flag)
-  }
-
-  blog.addEvent($el, 'click', function () {
-    const flag = blog.darkMode ? 'false' : 'true'
-    localStorage.darkMode = flag
-    initDarkMode(flag)
+  var $logo = document.querySelector('.header .logo')
+  blog.addEvent($logo, 'click', function () {
+    blog.setDarkTheme(!blog.darkTheme)
+    sessionStorage.darkTheme = blog.darkTheme
   })
-
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (ev) {
-      const systemDark = ev.target.matches
-      if (systemDark !== blog.darkMode) {
-        localStorage.darkMode = '' // 清除用户设置
-        initDarkMode(systemDark ? 'true' : 'false')
-      }
-    })
-  }
-})
-
-// 标题定位
-blog.addLoadEvent(function () {
-  if (!document.querySelector('.page-post')) {
-    return
-  }
-  const list = document.querySelectorAll('.post h1, .post h2')
-  for (var i = 0; i < list.length; i++) {
-    blog.addEvent(list[i], 'click', function (event) {
-      const el = event.target
-      if (el.scrollIntoView) {
-        el.scrollIntoView({ block: 'start' })
-      }
-      if (el.id && history.replaceState) {
-        history.replaceState({}, '', '#' + el.id)
-      }
-    })
-  }
 })

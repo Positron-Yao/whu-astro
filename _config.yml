@@ -7,6 +7,8 @@ keywords: 武汉大学,武大,天文
 author: whu-astro
 footerText: 'Copyright © 2024 武大天协'
 
+# Copyright © 2024 武大天协
+
 # 这些不要动
 permalink: /posts/:year/:month/:day/:title.html
 kramdown:
@@ -30,13 +32,13 @@ menu:
   - title: 首页
     url: /mainpage.html
   - title: 活动介绍
-    url: /pages/categories.html
+    url: /mainpage.html
   - title: 加入我们
-    url: /pages/search.html
+    url: /mainpage.html
   - title: 积分一览
-    url: /pages/links.html
+    url: /mainpage.html
   - title: 关于
-    url: /pages/about.html
+    url: /mainpage.html
 
 # 点击页面文字冒出特效,不需要请设置为false
 extClickEffect: true

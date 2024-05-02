@@ -1,10 +1,10 @@
 encoding: utf-8
 
 # SEO相关信息
-title: Positron's Phantasyland
-description: Sherry Positron's Website
-keywords: Positron,Blog,Python,Math
-author: Positron
+title: 武大天协
+description: 武汉大学天文爱好者协会
+keywords: 武汉大学,武大,天文
+author: whu-astro
 footerText: 'Copyright © 2077 心绮楼信息中心'
 
 # 这些不要动
@@ -18,10 +18,10 @@ exclude: ['CNAME', 'README.md', 'LICENSE', '_site', 'dist', 'Gemfile', 'Gemfile.
 # 域名配置
 # baseurl配置,如果网站部署在根目录下的其他目录中，请设置为 /目录名
 # domainUrl: 'https://positron-yao.github.io/positron-yao'
-baseurl: 'https://positron-yao.github.io/home'
+baseurl: 'https://positron-yao.github.io/whu-astro'
 
 # 吐个槽地址，会在chat页面中重定向到该地址
-tucaoUrl: https://www.bilibili.com
+tucaoUrl: https://www.baidu.com
 
 # 菜单
 # 必填字段 title: '文本' url: '链接'
@@ -48,7 +48,7 @@ extClickEffect: true
 extAdsense: false
 
 # 数学公式支持，比较影响加载速度,不需要请设置为false
-extMath: true
+extMath: false
 
 # 友情链接
 links:

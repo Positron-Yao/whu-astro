@@ -1,4 +1,4 @@
-# 个人主页
+# 主页
 
 这里是**武大天协**的[活动页面](https://positron-yao.github.io/whu-astro/mainpage.html)！
 

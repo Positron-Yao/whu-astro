@@ -23,22 +23,22 @@ exclude: ['CNAME', 'README.md', 'LICENSE', '_site', 'dist', 'Gemfile', 'Gemfile.
 baseurl: 'https://positron-yao.github.io/whu-astro'
 
 # 吐个槽地址，会在chat页面中重定向到该地址
-tucaoUrl: https://www.baidu.com
+tucaoUrl: https://github.com
 
 # 菜单
 # 必填字段 title: '文本' url: '链接'
 # 可选字段 target: '_blank' 新页面打开 
 menu:
   - title: 首页
-    url: /mainpage.html
+    url: /pages/mainpage.html
   - title: 活动介绍
-    url: /mainpage.html
+    url: /pages/introduction.html
   - title: 加入我们
-    url: /mainpage.html
+    url: /pages/join.html
   - title: 积分一览
-    url: /mainpage.html
+    url: /pages/scores.html
   - title: 关于
-    url: /mainpage.html
+    url: /pages/about
 
 # 点击页面文字冒出特效,不需要请设置为false
 extClickEffect: true

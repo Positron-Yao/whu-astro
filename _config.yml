@@ -5,7 +5,7 @@ title: 武大天协
 description: 武汉大学天文爱好者协会
 keywords: 武汉大学,武大,天文
 author: whu-astro
-footerText: 'Copyright © 2077 心绮楼信息中心'
+footerText: 'Copyright © 2024 武大天协'
 
 # 这些不要动
 permalink: /posts/:year/:month/:day/:title.html
@@ -29,14 +29,12 @@ tucaoUrl: https://www.baidu.com
 menu:
   - title: 首页
     url: /mainpage.html
-  - title: 归类
+  - title: 活动介绍
     url: /pages/categories.html
-  - title: 搜索
+  - title: 加入我们
     url: /pages/search.html
-  - title: 友链
+  - title: 积分一览
     url: /pages/links.html
-  - title: Wbh
-    url: /pages/webhelper.html
   - title: 关于
     url: /pages/about.html
 

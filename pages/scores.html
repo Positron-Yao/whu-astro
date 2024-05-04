@@ -4,8 +4,29 @@ title: 积分一览
 ---
 
 <h1>积分一览</h1>
-<div id="lable1"></div>
+<table>
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>分数</th>
+        </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+</table>
 
 <script>
-    document.getElementById("lable1").innerText = "Hello world!";
+    fetch('./1.csv')
+        .then(response => response.text())
+        .then(text => {
+            // 解析数据
+            lines = text.split('\n');
+
+            // 写入
+            var row = "";
+            lines.forEach(line => {
+                row += "<tr><td>" + line.replace(",", "</td><td>") + "</td></tr>\n";
+            });
+            document.getElementById("tbody").innerHTML = row;
+        })
+        .catch(error => console.error('爆了', error));
 </script>

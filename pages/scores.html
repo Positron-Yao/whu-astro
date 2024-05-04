@@ -73,15 +73,19 @@ title: 积分一览
 </table>
 
 <script>
-    fetch('./1.csv')
+    fetch('./scores.csv')
         .then(response => response.text())
         .then(text => {
             // 解析数据
             lines = text.split('\n');
+            console.log(lines);
+            if(lines[lines.length-1] == "") {
+                lines.pop()
+            }
 
             // 写入
             var row = "";
-            lines.slice(0, -1).forEach(line => {
+            lines.forEach(line => {
                 row += "<tr><td>" + line.replaceAll(",", "</td><td>") + "</td></tr>\n";
             });
             document.getElementById("tbody").innerHTML = row;

@@ -5,9 +5,9 @@ title: 积分一览
 
 <style>
     table {
-        width: 50%;
+        width: 75%;
         border-collapse: collapse;
-        margin-left: 25%;
+        margin-left: 12.5%;
         font-size: 150%;
     }
 
@@ -34,6 +34,7 @@ title: 积分一览
 <table>
     <thead>
         <tr>
+            <th>序号</th>
             <th>姓名</th>
             <th>分数</th>
         </tr>
@@ -50,7 +51,7 @@ title: 积分一览
 
             // 写入
             var row = "";
-            lines.forEach(line => {
+            lines.slice(0, -1).forEach(line => {
                 row += "<tr><td>" + line.replace(",", "</td><td>") + "</td></tr>\n";
             });
             document.getElementById("tbody").innerHTML = row;

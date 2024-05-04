@@ -28,11 +28,40 @@ title: 积分一览
         text-align: right;
         padding-right: 20px;
     }
+
+    /*表格滚动动画*/
+    @keyframes table {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-100%);
+        }
+    }
+
+    .table {
+        /* overflow: hidden;是隐藏超过自身范围的子元素，你给tbody开这个没用，因为
+       tbody是自身整体在移动，开到table上，当tbody滚动出table的范围之后就会隐藏了*/
+        overflow: hidden;
+    }
+
+    .table thead {
+        /* 给thead开个相对定位，然后把层级提高一下，盖住tbody，这样在z轴上，
+       tbody就到thead的下面了，再给thead一个背景色，就可以盖住tbody了*/
+        position: relative;
+        z-index: 1;
+        background-color: #0d1117;
+    }
+
+    .table tbody {
+        animation: table 30s infinite linear;
+    }
 </style>
 
 <h1>积分一览</h1>
 <hr />
-<table>
+<table class="table">
     <thead>
         <tr>
             <th>序号</th>

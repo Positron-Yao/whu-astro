@@ -13,7 +13,7 @@
         {% capture href %}{{ site.baseurl }}{{ menu.url }}{% endcapture %}
       {%- endunless -%}
 
-      <a href="{{href}}" {{target}} class="hover-underline">{{ menu.title }}</a>
+      <a href="{{href}}" {{target}} class="hover-underline">{{ menu.title }}</a>&nbsp;|&nbsp;
     {% endfor -%}
   </nav>
 </header>

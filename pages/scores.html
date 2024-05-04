@@ -52,7 +52,7 @@ title: 积分一览
             // 写入
             var row = "";
             lines.slice(0, -1).forEach(line => {
-                row += "<tr><td>" + line.replace(",", "</td><td>") + "</td></tr>\n";
+                row += "<tr><td>" + line.replaceAll(",", "</td><td>") + "</td></tr>\n";
             });
             document.getElementById("tbody").innerHTML = row;
         })

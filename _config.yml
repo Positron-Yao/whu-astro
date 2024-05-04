@@ -30,13 +30,13 @@ tucaoUrl: https://github.com
 # 可选字段 target: '_blank' 新页面打开 
 menu:
   - title: 首页
-    url: /pages/mainpage.html
+    url: /pages/mainpage
   - title: 活动介绍
-    url: /pages/introduction.html
+    url: /pages/introduction
   - title: 加入我们
-    url: /pages/join.html
+    url: /pages/join
   - title: 积分一览
-    url: /pages/scores.html
+    url: /pages/scores
   - title: 关于
     url: /pages/about
 
